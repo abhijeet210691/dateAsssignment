@@ -1,0 +1,36 @@
+
+<div class="container mt-5 ">
+    <form [formGroup]="dateForm">
+        <div class="row">
+            <div class="col-lg-4">
+                <label for="">Select Year</label>
+                    <select class="form-select" formControlName="year" (change)="resetForm()">
+                        <option value="" selected>Select Year</option>
+                        <option value="{{item}}" *ngFor="let item of allYears">{{item}}</option>
+                    </select>
+               
+            </div>
+            <div class="col-lg-4">
+                <label for="">Select Month</label>
+                    <select class="form-select" formControlName="month" (change)="getDates()">
+                        <option value="" selected>Select Month</option>
+                        <option *ngFor="let item of months; let i = index" value='{{i}}' >{{item}}</option>
+                    </select>
+            </div>
+            <div class="col-lg-4">
+                <label for="">Select Date</label>
+                    <select class="form-select" formControlName="date" (change)="finalDate()">
+                        <option value="" selected>Select Date</option>
+                        <option *ngFor="let item of allDaysInMonth; let i = index" value="{{item}}" >{{item}}</option>
+                    </select>
+                
+                
+            </div>
+        </div>
+    </form>
+   
+    <h2>Date: {{newFinalDate | date : 'dd/MM/yyyy'}} </h2>
+    
+</div>
+
+
