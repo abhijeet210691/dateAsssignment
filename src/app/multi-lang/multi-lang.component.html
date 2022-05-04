@@ -1,0 +1,42 @@
+<div class="container mt-5">
+    <select class="form-select" #langSelect (change)="translateService.use(langSelect.value)">
+        <option *ngFor="let lang of translateService.getLangs()" [value]="lang"
+            [selected]="lang === translateService.currentLang">{{lang}}</option>
+    </select>
+
+    <table class="table table-bordered mt-5">
+        <tbody>
+            <tr>
+                
+                <th>{{'NAME'|translate}}</th>
+                <td>{{'ABHIJEET SHENDE'|translate}}</td>
+            </tr>
+            <tr>
+                
+                <th>{{'ADDRESS'|translate}}</th>
+                <td>{{'PUNE'|translate}}</td>
+            </tr>
+            <tr>
+                
+                <th>{{'MOBILE NO'|translate}}</th>
+                <td>{{'8055798238'|translate}}</td>
+            </tr>
+            <tr>
+                
+                <th>{{'SEX'|translate}}</th>
+                <td>{{'MALE'|translate}}</td>
+            </tr>
+            <tr>
+                
+                <th>{{'STATE'|translate}}</th>
+                <td>{{'MAHARASHTRA'|translate}}</td>
+            </tr>
+            <tr>
+                
+                <th>{{'COUNTRY'|translate}}</th>
+                <td>{{'INDIA'|translate}}</td>
+            </tr>
+        </tbody>
+        
+    </table>
+</div>
